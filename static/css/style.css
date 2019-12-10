@@ -1,0 +1,86 @@
+li{
+    padding:1.7em 0.5em 0em 0.5em;
+  
+}
+a{
+    color: rgb(242, 242, 247);
+    
+}
+
+body{
+    background: url(../images/fondo.png);
+}
+#inicio{
+    float: right;
+    margin-left: 6em;
+}
+h2{
+    color: white;
+}
+
+input{
+    margin:2em 1em 2em 1em;
+    padding:0.5em 0em 0.5em 0em;
+    border-radius: 10px;
+    text-align: center;
+}
+select{
+    margin:2em 1em 2em 1em;
+    border-radius: 10px;
+    padding:0.5em 0em 0.5em 0em;
+}
+#id_Apellido,#id_Nombre,#id_Identificacion{
+    padding-left: 1.5em;
+}
+#id_Telefono,#id_Email,#id_Direccion{
+    padding-left: 1.5em;
+    
+}
+#id_Direccion{
+    margin-left: 3em;
+}
+#id_Email{
+    margin-left: 2em;
+}
+#id_Genero{
+    padding-left: 2em;
+}
+#id_Usuario{
+    padding-left: 7em;
+}
+#id_Tipo_Profesional{
+    padding-left: 6.7em;
+}
+#id_Foto{
+    padding-left: 2em;
+    margin-left: 2em;
+    
+}
+#id_Estado{
+    padding-left: 5em;
+    margin-left: 2em;
+}
+#registroenviar{
+    padding-left:30em;
+    padding-right:30em;  
+}
+#entrada{
+    margin-left: 37em;
+}
+#opciones{
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+#btcolor{
+    color: #0071BC;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+
+label{
+    color: #0071BC;
+    font-weight: normal;
+    font-weight: bold;
+    margin-left: 3em;
+}

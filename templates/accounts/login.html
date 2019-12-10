@@ -1,0 +1,67 @@
+{% extends 'Base.html' %}
+
+{% block principal %}
+<style>
+#opciones{
+        display: none;
+}
+#logo{
+position:fixed;
+margin-top: -7em;
+margin-left: 2em;
+
+}
+#doctor{
+position: fixed;
+margin-top: 22em;
+
+}
+#ico1{
+        margin-top: 29em;
+}
+
+
+label{
+        color: black;
+}
+#id_username{
+        margin: 0em 0em 0em 0em;
+        padding: 0.3em 0em 0.3em 0em;
+}
+#id_password{
+        margin: 0em 0em 0em 0em;
+        padding: 0.3em 0em 0.3em 0em;
+}
+label{
+        display: none;
+}
+#ico2{
+        margin-top: 29em;
+        margin-left: 50em; 
+}
+
+</style>
+        <img src="/static/images/doctor.png" width="300px" height="300px" id="doctor"/>
+        <img src="/static/images/logo.png" width="1100px" height="600px" id="logo"/>
+<div  class="container">
+        <div class="row">
+                <div class="coul-md-2" id="ico2">
+                        <nav id=""><img src="/static/images/usuario.png" height="50px" width="50px"></nav>
+                        <nav id=""><img src="/static/images/contraseña.png" height="50px" width="50px"></nav>
+                </div>
+                <div class="coul-md-6" id="ico1">
+                        <form method="POST" action="{% url 'login' %}">
+           
+                                {% csrf_token %}
+                    
+                                {{ form.as_p }}
+                    
+                                <div class="text-center">
+                                        <button class="btn btn-info" type="submit">Iniciar</button>
+                                </div>
+                        </form>
+                </div>
+        </div>
+</div>
+
+{% endblock %}

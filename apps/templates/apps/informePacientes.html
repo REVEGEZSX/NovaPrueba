@@ -1,0 +1,64 @@
+{% extends 'Base.html' %}
+
+{% block principal %}
+<style>
+#editar{
+    background-color: #0071bc;
+    border-radius: 20%;
+    border: none;
+    height: 20px;
+    width: 30px;
+}
+td,th{
+    text-align: center;
+}
+</style>
+
+
+
+    <h2>Listado de Pacientes</h2>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+                <tr class="table-light">
+                     <th scope="col">Nombre</th>
+                     <th scope="col">Apellido</th>
+                     <th scope="col">Identificacion</th>
+                     <th scope="col">Telefono</th>
+                     <th scope="col">Email</th>
+                     <th scope="col">Direccion</th>
+                     <th scope="col">Genero</th>
+                     <th scope="col">Foto</th>
+                     <th scope="col">Actualizar</th>
+                     <th scope="col">Eliminar</th>
+                     
+                </tr>
+
+        </thead>
+        <tbody>
+                {% for paciente in object_list  %}
+                    <tr class="table-secondary">
+                        {% if paciente.Estado == True %}
+                        <td>{{ paciente.Nombre }} </td>
+                        <td>{{ paciente.Apellido }}</td>
+                        <td>{{ paciente.Identificacion }}</td>
+                        <td>{{ paciente.Telefono }}</td>
+                        <td>{{ paciente.Email }}</td>
+                        <td>{{ paciente.Direccion }}</td>
+                        <td>{{ paciente.Genero }}</td>
+                        <td>{{ paciente.Mostrar_foto }}</td>                                    
+                            <td><a href="{% url 'editar_paciente' paciente.id %}"><button id="editar"></button></a></td>
+                            <form action="{% url 'eliminar_Paciente' paciente.id %}" method="POST">
+                                    {% csrf_token %}    
+                                <td><a href="{% url 'eliminar_Paciente' paciente.id %}"><button id="editar"></button></a></td> 
+                                
+                            </form>                                      
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+    
+{% endblock %}

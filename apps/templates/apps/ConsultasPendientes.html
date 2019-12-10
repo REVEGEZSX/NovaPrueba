@@ -1,0 +1,49 @@
+{% extends 'Base.html' %}
+
+{% block principal %}
+<style>
+    #editar{
+        background-color: #0071bc;
+        border-radius: 20%;
+        border: none;
+        height: 20px;
+        width: 30px;
+    }
+    td,th{
+        text-align: center;
+    }
+    </style>
+
+
+
+    <h2>Listado de Citas</h2>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+                <tr class="table-light">
+                     <th scope="col">Fecha</th>
+                     <th scope="col">Hora</th>
+                     <th scope="col">Descripcion</th>
+                     <th scope="col">Paciente</th>
+                     <th scope="col">Profesional</th>
+                     <th scope="col">Iniciar Consulta</th>
+                </tr>
+
+        </thead>
+        <tbody>
+                {% for cita in object_list  %}
+                    <tr class="table-secondary">
+                        <td>{{ cita.Fecha }} </td>
+                        <td>{{ cita.Hora }}</td>
+                        <td>{{ cita.Descripcion }}</td>
+                        <td>{{ cita.Paciente }}</td>
+                        <td>{{ cita.Profesional }}</td>            
+                        <td><a href="skype:LEBAB_10@HOTMAIL.COM?call"><button id="editar"></button></a></td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+    
+{% endblock %}

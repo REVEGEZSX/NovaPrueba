@@ -1,0 +1,65 @@
+{% extends 'Base.html' %}
+
+{% block principal %}
+<style>
+        #editar{
+            background-color: #0071bc;
+            border-radius: 20%;
+            border: none;
+            height: 20px;
+            width: 30px;
+
+        }
+        td,th{
+            text-align: center;
+        }
+</style>
+
+
+    <h2>Listado de empleados</h2>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+                <tr class="table-light">
+                     <th scope="col">Nombre</th>
+                     <th scope="col">Apellido</th>
+                     <th scope="col">Identificacion</th>
+                     <th scope="col">Telefono</th>
+                     <th scope="col">Email</th>
+                     <th scope="col">Direccion</th>
+                     <th scope="col">Genero</th>
+                     <th scope="col">Especialidad</th>
+                     <th scope="col">Foto</th>
+                     <th scope="col">Actualizar</th>
+                     <th scope="col">Eliminar</th>
+                     
+                </tr>
+        </thead>
+        <tbody>
+                {% for profesional in object_list  %}
+                    <tr class="table-secondary">
+                        {% if profesional.Estado == True %}
+                        <td>{{ profesional.Nombre }} </td>
+                        <td>{{ profesional.Apellido }}</td>
+                        <td>{{ profesional.Identificacion }}</td>
+                        <td>{{ profesional.Telefono }}</td>
+                        <td>{{ profesional.Email }}</td>
+                        <td>{{ profesional.Direccion }}</td>
+                        <td>{{ profesional.Genero }}</td>  
+                        <td>{{ profesional.Tipo_Profesional }}</td>
+                        <td>{{ profesional.Mostrar_foto }}</td>              
+                        <td><a href="{% url 'editar_empleado' profesional.id %}"><button id="editar"></button></a></td>
+                        <form action="{% url 'eliminar_Empleado' profesional.id %}" method="POST">
+                                {% csrf_token %}    
+                            <td><a href="{% url 'eliminar_Empleado' profesional.id %}"><button id="editar"></button></a></td> 
+                            
+                        </form>   
+                        {% endif %} 
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+    
+{% endblock %} 

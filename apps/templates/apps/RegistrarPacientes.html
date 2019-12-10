@@ -1,0 +1,16 @@
+  
+{% extends 'Base.html' %}
+
+{% block principal %}
+<div>
+    <form action="#" method="post" class="form-row">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+    <button type="submit" name="button1" id="registroenviar"  value="Enviar"><a href="{% url 'Registrar_paciente' %}" id="btcolor">Enviar</a></button>
+
+    </form>
+</div>
+{% endblock %}
